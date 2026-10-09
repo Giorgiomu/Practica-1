@@ -33,8 +33,8 @@
                     <ColumnDefinition Width="200" />
                 </Grid.ColumnDefinitions>
 
-                <!-- Logo en esquina superior izquierda -->
-                <Image x:Name="logoImage" Grid.Column="0" Source="/Practica 1;component/Images/Blizzard.png" Width="281" Height="294" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <!-- Logo en esquina superior izquierda (ajustado) -->
+                <Image x:Name="logoImage" Grid.Column="0" Source="/Practica 1;component/Images/Blizzard.png" Width="199" Height="250" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0,0,0" Grid.ColumnSpan="2" />
 
                 <!-- Center navigation -->
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="100,0,0,0">
@@ -45,10 +45,12 @@
                     <TextBlock Text="CHAT" FontSize="18" FontWeight="Bold" Foreground="#8fbfff" Margin="10,0" />
                 </StackPanel>
 
-                <!-- Perfil a la derecha (añadir logo JAMEL) -->
+                <!-- Perfil a la derecha (añadir logo JAMEL y botón cerrar sesión) -->
                 <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,12,0">
-                    <Image x:Name="jamelLogo" Source="/Practica 1;component/Images/jamel.png" Width="36" Height="36" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    <TextBlock Text="mi perfil" FontSize="12" Foreground="#8fbfff" VerticalAlignment="Center" />
+                    <TextBlock x:Name="WelcomeText" Text="" FontSize="14" Foreground="#8fbfff" VerticalAlignment="Center" Margin="0,0,12,0" />
+                    <Image x:Name="jamelLogo" Source="/Practica 1;component/Images/jamel.png" Width="36" Height="36" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,8,0" />
+                    <TextBlock Text="mi perfil" FontSize="12" Foreground="#8fbfff" VerticalAlignment="Center" Margin="0,0,8,0" />
+                    <Button x:Name="LogoutButton" Content="Cerrar Sesión" FontSize="12" Padding="6,2" Click="LogoutButton_Click" />
                 </StackPanel>
             </Grid>
         </Border>
@@ -57,12 +59,14 @@
         <Border Grid.Row="1" Grid.Column="0" Margin="20,20,20,20" CornerRadius="16" BorderBrush="#09314a" BorderThickness="1" Background="#071025">
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="18">
                 <!-- Foto de usuario (poner Images/user.png en el proyecto) -->
-                <Image Width="96" Height="96" Source="pack://application:,,,/Images/user.png" HorizontalAlignment="Center" Margin="0,6,0,12">
+                <Image Width="96" Height="96" Source="pack://application:,,,/Images/user.png" HorizontalAlignment="Center" Margin="0,6,0,6">
                     <Image.Clip>
                         <EllipseGeometry Center="48,48" RadiusX="48" RadiusY="48" />
                     </Image.Clip>
                 </Image>
-                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,6,0,0">
+                <!-- Saludo en la barra lateral (encima de Destacados) -->
+                <TextBlock x:Name="SidebarWelcomeText" Text="" FontSize="14" FontWeight="SemiBold" Foreground="#8fbfff" HorizontalAlignment="Left" Margin="6,6,0,6" />
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0">
                     <TextBlock Text="Destacados" FontSize="16" Margin="10" Foreground="White" />
                     <TextBlock Text="Mis juegos" FontSize="16" Margin="10" Foreground="White" />
                     <TextBlock Text="Configuración" FontSize="16" Margin="10" Foreground="White" />

@@ -24,4 +24,11 @@
     <Resource Include="Images\**\*.*" />
   </ItemGroup>
 
+  <!-- Incluir Users.json como contenido y copiar al bin -->
+  <ItemGroup>
+    <Content Include="Users.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

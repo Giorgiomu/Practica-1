@@ -123,4 +123,23 @@ Class MainWindow
         End If
     End Sub
 
+    Public Sub SetWelcome(usuario As String)
+        Try
+            If WelcomeText IsNot Nothing Then
+                WelcomeText.Text = "Bienvenido, " & usuario
+            End If
+            If SidebarWelcomeText IsNot Nothing Then
+                SidebarWelcomeText.Text = "Bienvenido, " & usuario
+            End If
+        Catch
+        End Try
+    End Sub
+
+    Private Sub LogoutButton_Click(sender As Object, e As RoutedEventArgs)
+        ' Cerrar MainWindow y volver al LoginWindow
+        Dim lw = New LoginWindow()
+        lw.Show()
+        Me.Close()
+    End Sub
+
 End Class
